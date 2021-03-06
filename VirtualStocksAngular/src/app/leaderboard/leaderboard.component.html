@@ -1,0 +1,18 @@
+<h3>LEADERBOARD </h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+          
+          <th scope="col">UserID</th>
+          <th scope="col">Password</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let dataitems of LeaderList">
+          
+          <td>{{dataitems.UserId}}</td>
+          <td>{{dataitems.UserPassword}}</td>
+        </tr>
+      </tbody>
+  </table>
+  
