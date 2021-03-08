@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { SharedService } from './shared.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
