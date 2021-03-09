@@ -15,13 +15,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AboutusComponent } from './aboutus/aboutus.component';
-
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
     LeaderboardComponent,
     AboutusComponent,
-    NavbarComponent
+    NavbarComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTableModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
