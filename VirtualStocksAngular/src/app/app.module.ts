@@ -17,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import {MatTableModule} from '@angular/material/table';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
