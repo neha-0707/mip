@@ -18,6 +18,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import {MatTableModule} from '@angular/material/table';
 import { MoversComponent } from './movers/movers.component';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { MoversComponent } from './movers/movers.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
