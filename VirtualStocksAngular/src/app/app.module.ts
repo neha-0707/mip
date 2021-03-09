@@ -17,13 +17,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import {MatTableModule} from '@angular/material/table';
+import { MoversComponent } from './movers/movers.component';
 @NgModule({
   declarations: [
     AppComponent,
     LeaderboardComponent,
     AboutusComponent,
     NavbarComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    MoversComponent
   ],
   imports: [
     BrowserModule,
