@@ -19,6 +19,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import {MatTableModule} from '@angular/material/table';
 import { MoversComponent } from './movers/movers.component';
 import {MatCardModule} from '@angular/material/card';
+import { LoginComponent } from './login/login.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import {MatCardModule} from '@angular/material/card';
     AboutusComponent,
     NavbarComponent,
     PortfolioComponent,
-    MoversComponent
+    MoversComponent,
+    LoginComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 @Component({
   selector: 'app-portfolio',
   styleUrls: ['./portfolio.component.scss'],
-  templateUrl: './portfolio.component.html',
+  templateUrl: './portfolio.component.html', 
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0'})),
