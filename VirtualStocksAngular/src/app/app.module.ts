@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,7 @@ import { AuthService } from './auth.service';
     MatTableModule,
     MatCardModule
   ],
-  providers: [SharedService,AuthService],
+  providers: [SharedService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -11,14 +12,18 @@ export class LoginComponent implements OnInit {
     username:"",
     password:""
   }
-  constructor(private service: AuthService) { }
+  constructor(private service: AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
     this.service.loginUser(this.loginArray).subscribe(
-      res=>console.log(res),
+      res=>{
+        console.log(res);
+        localStorage.setItem('token',res.token);
+        this.router.navigate(['/aboutus']);
+      },
       err=>console.log(err)
     )
   }
