@@ -4,7 +4,7 @@
     <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="floatingInput" placeholder="name123" name="username"
-         #username="ngModel" [(ngModel)]="loginArray.username" required
+         #username="ngModel" [(ngModel)]="regArray.username" required
          [class.is-invalid]="username.invalid && username.touched">
          <small class="text-danger" [class.d-none]="username.valid || username.untouched">
              Name is required
@@ -13,7 +13,7 @@
     </div>
     <div class="form-floating">
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" 
-        #password="ngModel" [(ngModel)]="loginArray.password" required
+        #password="ngModel" [(ngModel)]="regArray.password" required
         [class.is-invalid]="password.invalid && password.touched">
         <small class="text-danger" [class.d-none]="password.valid || password.untouched">
             Password is required
@@ -24,7 +24,4 @@
     
     <input type="submit" [disabled]="loginForm.form.invalid" class="btn btn-primary">
 </form>
-<br>
-<div class="text-success">New here?</div>
-<a href=# >Register Here</a>
 </div>

@@ -21,6 +21,8 @@ import { MoversComponent } from './movers/movers.component';
 import {MatCardModule} from '@angular/material/card';
 import { LoginComponent } from './login/login.component';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthService } from './auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { TransactionsComponent } from './transactions/transactions.component';
     PortfolioComponent,
     MoversComponent,
     LoginComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import { TransactionsComponent } from './transactions/transactions.component';
     MatTableModule,
     MatCardModule
   ],
-  providers: [SharedService],
+  providers: [SharedService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
