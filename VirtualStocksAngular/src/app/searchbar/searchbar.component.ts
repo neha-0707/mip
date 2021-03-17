@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SendstockService } from '../sendstock.service';
 
 @Component({
@@ -10,7 +11,8 @@ export class SearchbarComponent implements OnInit {
   bseStocks: string[];
   bStock:any;
   bseStocksTemp: string[];
-  constructor(private service:SendstockService) { }
+  constructor(private service:SendstockService,   private route: ActivatedRoute,
+    private router: Router) { }
   
   ngOnInit(): void {
     this.bseStocks=  ['Apple','AAAjjfjs','AAAA' ,'Orange', 'Banana'];
@@ -32,10 +34,14 @@ export class SearchbarComponent implements OnInit {
   }
   onClick(s:string)
   {
-    console.log(s);
-    this.service.stockname(s).subscribe(data=>{
-      alert(data.toString());
-    })
+   console.log(s);
+    //this.service.stockname(s).subscribe(data=>{
+      //alert(data.toString());
+   // })
+   const stockname = s ? s : null;
+   // Pass along the hero id if available
+   // so that the HeroList component can select that item.
+   this.router.navigate(['/stockdetail', { name: stockname }]);
   }
   
 
