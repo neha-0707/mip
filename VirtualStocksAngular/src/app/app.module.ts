@@ -24,6 +24,10 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import {  Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +38,8 @@ import { AuthGuard } from './auth.guard';
     MoversComponent,
     LoginComponent,
     TransactionsComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
@@ -50,8 +55,10 @@ import { AuthGuard } from './auth.guard';
     MatIconModule,
     MatListModule,
     MatTableModule,
-    MatCardModule
-  ],
+    MatCardModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule , ],
   providers: [SharedService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
