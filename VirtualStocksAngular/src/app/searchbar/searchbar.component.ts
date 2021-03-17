@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SendstockService } from '../sendstock.service';
 
 @Component({
   selector: 'app-searchbar',
@@ -9,8 +10,7 @@ export class SearchbarComponent implements OnInit {
   bseStocks: string[];
   bStock:any;
   bseStocksTemp: string[];
-  p:number=1;
-  constructor() { }
+  constructor(private service:SendstockService) { }
   
   ngOnInit(): void {
     this.bseStocks=  ['Apple','AAAjjfjs','AAAA' ,'Orange', 'Banana'];
@@ -30,9 +30,12 @@ export class SearchbarComponent implements OnInit {
     }
 
   }
-  onClick(s:any)
+  onClick(s:string)
   {
     console.log(s);
+    this.service.stockname(s).subscribe(data=>{
+      alert(data.toString());
+    })
   }
   
 
