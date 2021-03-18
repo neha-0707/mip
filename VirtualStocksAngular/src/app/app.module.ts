@@ -29,6 +29,8 @@ import {  Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { StockdetailComponent } from './stockdetail/stockdetail.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BuyComponent } from './buy/buy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,8 @@ import { StockdetailComponent } from './stockdetail/stockdetail.component';
     TransactionsComponent,
     RegisterComponent,
     SearchbarComponent,
-    StockdetailComponent
+    StockdetailComponent,
+    BuyComponent
   ],
   imports: [
     BrowserModule,
@@ -60,8 +63,10 @@ import { StockdetailComponent } from './stockdetail/stockdetail.component';
     MatCardModule,
     Ng2SearchPipeModule,
     Ng2OrderModule,
-    NgxPaginationModule , ],
+    NgxPaginationModule ,
+  MatDialogModule ],
   providers: [SharedService,AuthService,AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[BuyComponent]
 })
 export class AppModule { }
