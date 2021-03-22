@@ -4,7 +4,7 @@ from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 # from UserApp.models import Users
 # from UserApp.serializers import UserSerializer
-
+from django.http import HttpResponse
 # Create your views here.
 def index(request):
     return HttpResponse('hey');
