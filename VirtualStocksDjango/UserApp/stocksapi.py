@@ -1,8 +1,17 @@
 from nsetools import Nse as NSE
 import json
-from .models import Stock
 
         # self.image=image
+
+class Stock():
+
+    def __init__(self,high, low,previous_close,symbol,change,company_name):
+        self.high=high
+        self.low=low
+        self.previous_close=previous_close
+        self.symbol=symbol
+        self.change=change
+        self.company_name=company_name
 
 nse=NSE();
 
