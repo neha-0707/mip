@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { BuyComponent } from '../buy/buy.component';
+import { SellComponent } from '../sell/sell.component';
 import { SendstockService } from '../sendstock.service';
 
 @Component({
@@ -36,5 +37,18 @@ StockDetails:any;
     dialogConfig.width="60%";
     dialogConfig.data=this.StockName;
     this.dialog.open(BuyComponent,dialogConfig);
+  }
+  sellstock()
+  {
+    const dialogConfig= new MatDialogConfig();
+    dialogConfig.disableClose=false;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="60%";
+    dialogConfig.data=this.StockName;
+    this.dialog.open(SellComponent,dialogConfig); 
+  }
+  addtoWishlist()
+  {
+    //write serivce to send this to the wishlist db
   }
 }

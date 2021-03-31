@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-buy',
@@ -7,12 +7,21 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./buy.component.scss']
 })
 export class BuyComponent implements OnInit {
-
+quantity="";
   constructor(
-    @Inject(MAT_DIALOG_DATA) public stockname:any
+    @Inject(MAT_DIALOG_DATA) public stockname:any,
+    public diaglogRef: MatDialogRef<BuyComponent>
   ) { }
 
   ngOnInit(): void {
+  }
+  closeDialog()
+  {
+this.diaglogRef.close();
+  }
+  onSubmit()
+  {
+    console.log(this.quantity);
   }
 
 }

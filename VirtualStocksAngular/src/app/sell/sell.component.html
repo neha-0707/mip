@@ -1,4 +1,5 @@
-<h2>{{stockname}}</h2>
+<h2>sell {{stockname}}</h2>
+
 <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
 <form #quantityForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
     {{quantityForm.value | json}}
