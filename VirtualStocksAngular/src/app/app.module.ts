@@ -31,6 +31,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { StockdetailComponent } from './stockdetail/stockdetail.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BuyComponent } from './buy/buy.component';
+import { SellComponent } from './sell/sell.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,9 @@ import { BuyComponent } from './buy/buy.component';
     RegisterComponent,
     SearchbarComponent,
     StockdetailComponent,
-    BuyComponent
+    BuyComponent,
+    SellComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,
