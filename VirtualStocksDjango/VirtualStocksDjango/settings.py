@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'UserApp',
+    'UserApp.apps.UserappConfig',
     'rest_framework'
 ]
 
@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # REST_FRAMEWORK=[
-    
+
 # ]
 
 
