@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from .auth_url import get_token
 
 urlpatterns = [
     path('stock/<str:name>', views.stock, name='stock'),
@@ -11,5 +10,4 @@ urlpatterns = [
     path('list-users', views.listUsers, name='list-users'),
     path('delete-user/<str:pk>', views.deleteUser, name='delete-user'),
     path('update-user/<str:pk>', views.updateUser, name='update-user'),
-    path('api-token-auth', get_token, name='obtain-token'),
 ]
