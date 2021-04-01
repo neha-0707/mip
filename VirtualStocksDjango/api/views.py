@@ -11,8 +11,8 @@ from .serializers import UserSerializer, RegistrationSerializer
 # Create your views here.
 
 
-def index(request):
-    data = get_stock_by_name('INFY')
+def index(request,name):
+    data = get_stock_by_name(name)
     return JsonResponse(data)
 
 
