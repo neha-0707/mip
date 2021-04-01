@@ -17,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(
+    ConfPassword = serializers.CharField(
         style={'input-type': 'password'}, write_only=True)
 
     class Meta:
@@ -49,7 +49,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
                 {'passwordError': 'Passwords do not match'})
 
         user.username = unameInp
-        user.password = password
+        user.set_password(password)
 
         watchlist.save()
         portfolio.save()
