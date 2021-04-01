@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class AuthService {
-  readonly RegUrl = "#";
+  readonly RegUrl = "http://127.0.0.1:8000/api/register-user";
   readonly logUrl = "#";
   constructor(private http: HttpClient) { }
 

@@ -3,22 +3,31 @@
 
     <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name123" name="username"
-         #username="ngModel" [(ngModel)]="regArray.username" required
-         [class.is-invalid]="username.invalid && username.touched">
-         <small class="text-danger" [class.d-none]="username.valid || username.untouched">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name123" name="Username"
+         #Username="ngModel" [(ngModel)]="regArray.Username" required
+         [class.is-invalid]="Username.invalid && Username.touched">
+         <small class="text-danger" [class.d-none]="Username.valid || Username.untouched">
              Name is required
          </small>
         <label for="floatingInput">Username</label>
     </div>
     <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" 
-        #password="ngModel" [(ngModel)]="regArray.password" required
-        [class.is-invalid]="password.invalid && password.touched">
-        <small class="text-danger" [class.d-none]="password.valid || password.untouched">
+        <input type="password" class="form-control"  placeholder="Userpassword" name="Userpassword" 
+        #Userpassword="ngModel" [(ngModel)]="regArray.Userpassword" required
+        [class.is-invalid]="Userpassword.invalid && Userpassword.touched">
+        <small class="text-danger" [class.d-none]="Userpassword.valid || Userpassword.untouched">
+            password is required
+        </small>
+        <label for="floatingUserpassword">Password</label>
+    </div>
+    <div class="form-floating">
+        <input type="password" class="form-control"  placeholder="ConfPassword" name="ConfPassword" 
+        #ConfPassword="ngModel" [(ngModel)]="regArray.ConfPassword" required
+        [class.is-invalid]="ConfPassword.invalid && ConfPassword.touched">
+        <small class="text-danger" [class.d-none]="ConfPassword.valid || ConfPassword.untouched">
             Password is required
         </small>
-        <label for="floatingPassword">Password</label>
+        <label for="floatingPassword">Confirm Password</label>
     </div>
     <br>
     

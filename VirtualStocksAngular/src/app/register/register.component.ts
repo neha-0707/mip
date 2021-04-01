@@ -8,9 +8,11 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  
   regArray = {
-    username:"",
-    password:""
+    Username:"",
+    Userpassword:"",
+    ConfPassword:""
   }
   constructor(private service: AuthService,private router:Router) { }
 
@@ -18,6 +20,9 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(){
+    
+    console.log(this.regArray);
+
     this.service.registerUser(this.regArray).subscribe(
       res=>{
         console.log(res);
