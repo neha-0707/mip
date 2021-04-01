@@ -3,6 +3,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
 from django.conf import settings
+from django.contrib import auth
 
 # Create your models here.
 # class Users(models.Model):
@@ -38,12 +39,10 @@ class PortfolioStocks(models.Model):
     NumberOfStocks = models.IntegerField()
 
 
-class User(models.Model):
+class User(auth.models.User):
     UserID = models.AutoField(primary_key=True)
-    Username = models.CharField(max_length=15)
     Usermoney = models.DecimalField(
         blank=False, null=False, decimal_places=2, max_digits=10, default=500000)
-    Userpassword = models.CharField(blank=False, null=False, max_length=50)
     PortfolioID = models.ForeignKey(Portfolios, on_delete=models.CASCADE)
     WatchlistID = models.ForeignKey(Watchlists, on_delete=models.CASCADE)
 
