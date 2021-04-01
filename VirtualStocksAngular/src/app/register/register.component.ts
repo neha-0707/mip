@@ -8,12 +8,12 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  
+  errMsg="";
   regArray = {
     Username:"",
     Userpassword:"",
     ConfPassword:""
-  }
+  };
   constructor(private service: AuthService,private router:Router) { }
 
   ngOnInit(): void {
@@ -29,7 +29,10 @@ export class RegisterComponent implements OnInit {
         localStorage.setItem('token',res.token);
         this.router.navigate(['/aboutus']);
       },
-      err=>console.log(err)
+      err=>{
+        console.log(err);
+        this.errMsg = err;
+      }
     )
   }
 }
