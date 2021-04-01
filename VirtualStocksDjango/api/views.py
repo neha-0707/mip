@@ -59,6 +59,16 @@ def losers(request):
 #         user.delete()
 #         return JsonResponse("Deleted successfully", safe=False)
 
+@api_view(['GET'])
+def apiHome(request):
+    api_urls = {
+        "Register a user": "register-user/",
+        "Display all users": "list-users/",
+        "Update a user's details": "update-user/<str:pk>",
+        "Delete a user": "delete-user/<str:pk>"
+    }
+    return Response(api_urls)
+
 
 @api_view(['GET'])
 def listUsers(request):
