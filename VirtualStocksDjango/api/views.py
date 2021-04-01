@@ -18,7 +18,7 @@ def index(request,name):
 
 def stocks(request):
     data = get_stocks_list()
-    return JsonResponse(data)
+    return JsonResponse({"data":data},safe=False)
 
 
 def gainers(request):

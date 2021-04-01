@@ -33,7 +33,7 @@ def get_stock_object(data):
 
 def get_stocks_list():
     codes=nse.get_stock_codes(cached=True)
-    return codes
+    return list(codes.values())
 
 def get_stock_by_name(name):
     data=nse.get_quote(name)
