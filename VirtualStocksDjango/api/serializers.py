@@ -5,21 +5,14 @@ from .models import User, Watchlists, Portfolios
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = [
-            'UserID',
-            'Username',
-            'Usermoney',
-            'Userpassword',
-            'PortfolioID',
-            'WatchlistID'
-        ]
+        fields ='__all__',
         read_only_fields = [
             'PortfolioID',
             'UserID',
             'WatchlistID'
         ]
         extra_kwargs = {
-            'Userpassword': {'write_only': True}
+            'password': {'write_only': True}
         }
 
 
@@ -30,12 +23,12 @@ class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = [
-            'Username',
-            'Userpassword',
+            'username',
+            'password',
             'ConfPassword',
         ]
         extra_kwargs = {
-            'Userpassword': {'write_only': True}
+            'password': {'write_only': True}
         }
 
     def save(self):
@@ -43,11 +36,11 @@ class RegistrationSerializer(serializers.ModelSerializer):
         watchlist = Watchlists()
         portfolio = Portfolios()
 
-        unameInp = self.validated_data['Username']
-        password = self.validated_data['Userpassword']
+        unameInp = self.validated_data['username']
+        password = self.validated_data['password']
         password2 = self.validated_data['ConfPassword']
 
-        if User.objects.filter(Username=unameInp).exists():
+        if User.objects.filter(username=unameInp).exists():
             raise serializers.ValidationError(
                 {'usernameError': 'Username already exists'})
 
@@ -55,8 +48,8 @@ class RegistrationSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 {'passwordError': 'Passwords do not match'})
 
-        user.Username = unameInp
-        user.Userpassword = password
+        user.username = unameInp
+        user.set_password(password)
 
         watchlist.save()
         portfolio.save()

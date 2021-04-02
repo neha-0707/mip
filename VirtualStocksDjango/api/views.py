@@ -8,10 +8,10 @@ from django.http.response import JsonResponse
 from .stocksapi import *
 from .models import User
 from .serializers import UserSerializer, RegistrationSerializer
-# Create your views here.
+from rest_framework.decorators import authentication_classes, permission_classes
 
 
-def index(request,name):
+def stock(request,name):
     data = get_stock_by_name(name)
     return JsonResponse(data)
 
@@ -59,6 +59,16 @@ def losers(request):
 #         user.delete()
 #         return JsonResponse("Deleted successfully", safe=False)
 
+@api_view(['GET'])
+def apiHome(request):
+    api_urls = {
+        "Register a user": "register-user/",
+        "Display all users": "list-users/",
+        "Update a user's details": "update-user/<str:pk>",
+        "Delete a user": "delete-user/<str:pk>"
+    }
+    return Response(api_urls)
+
 
 @api_view(['GET'])
 def listUsers(request):
@@ -68,6 +78,8 @@ def listUsers(request):
 
 
 @api_view(['POST'])
+@authentication_classes([])
+@permission_classes([])
 def registerUser(request):
     serializer = RegistrationSerializer(data=request.data)
     if serializer.is_valid():

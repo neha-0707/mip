@@ -1,20 +1,26 @@
 from django.db import models
+<<<<<<< HEAD
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
+=======
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
+from django.conf import settings
+from django.contrib import auth
 
 # Create your models here.
 # class Users(models.Model):
 #     UserId = models.AutoField(primary_key=True)
 #     UserPassword = models.CharField(max_length=50)
+>>>>>>> b83401430d1d057ffc8e8c41d21d9f4835603e98
 
 
 class Stock(models.Model):
     ApiRef = models.CharField(max_length=50)
     StockID = models.AutoField(primary_key=True)
-    # High = models.DecimalField(decimal_places=2, max_digits=10)
-    # Low = models.DecimalField(decimal_places=2, max_digits=10)
-    # Change = models.DecimalField(decimal_places=2, max_digits=10)
-    # Previous_close = models.DecimalField(decimal_places=2, max_digits=10)
-    # Symbol = models.CharField(max_length=10)
-    # Company_name = models.CharField(max_length=256)
 
 
 class Watchlists(models.Model):
@@ -34,14 +40,17 @@ class PortfolioStocks(models.Model):
     NumberOfStocks = models.IntegerField()
 
 
-class User(models.Model):
+class User(auth.models.User):
     UserID = models.AutoField(primary_key=True)
-    Username = models.CharField(max_length=15)
     Usermoney = models.DecimalField(
         blank=False, null=False, decimal_places=2, max_digits=10, default=500000)
-    Userpassword = models.CharField(blank=False, null=False, max_length=50)
     PortfolioID = models.ForeignKey(Portfolios, on_delete=models.CASCADE)
     WatchlistID = models.ForeignKey(Watchlists, on_delete=models.CASCADE)
+
+@receiver(post_save, sender=User)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
 
 
 class Transactions(models.Model):
