@@ -9,19 +9,30 @@
          <small class="text-danger" [class.d-none]="username.valid || username.untouched">
              Name is required
          </small>
-        <label for="floatingInput">Username</label>
+        <label for="floatingInput">username</label>
     </div>
     <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" 
+        <input type="password" class="form-control"  placeholder="password" name="password" 
         #password="ngModel" [(ngModel)]="regArray.password" required
         [class.is-invalid]="password.invalid && password.touched">
         <small class="text-danger" [class.d-none]="password.valid || password.untouched">
+            password is required
+        </small>
+        <label for="floatingpassword">Password</label>
+    </div>
+    <br>
+    <div class="form-floating">
+        <input type="password" class="form-control"  placeholder="ConfPassword" name="ConfPassword" 
+        #ConfPassword="ngModel" [(ngModel)]="regArray.ConfPassword" required
+        [class.is-invalid]="ConfPassword.invalid && ConfPassword.touched">
+        <small class="text-danger" [class.d-none]="ConfPassword.valid || ConfPassword.untouched">
             Password is required
         </small>
-        <label for="floatingPassword">Password</label>
+        <label for="floatingPassword">Confirm Password</label>
     </div>
     <br>
     
     <input type="submit" [disabled]="loginForm.form.invalid" class="btn btn-primary">
 </form>
 </div>
+<br>

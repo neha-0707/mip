@@ -8,17 +8,17 @@ from django.http.response import JsonResponse
 from .stocksapi import *
 from .models import User
 from .serializers import UserSerializer, RegistrationSerializer
-# Create your views here.
+from rest_framework.decorators import authentication_classes, permission_classes
 
 
-def index(request):
-    data = get_stock_by_name('INFY')
+def stock(request,name):
+    data = get_stock_by_name(name)
     return JsonResponse(data)
 
 
 def stocks(request):
     data = get_stocks_list()
-    return JsonResponse(data)
+    return JsonResponse({"data":data},safe=False)
 
 
 def gainers(request):
@@ -78,6 +78,8 @@ def listUsers(request):
 
 
 @api_view(['POST'])
+@authentication_classes([])
+@permission_classes([])
 def registerUser(request):
     serializer = RegistrationSerializer(data=request.data)
     if serializer.is_valid():
