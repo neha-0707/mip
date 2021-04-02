@@ -1,20 +1,13 @@
 from django.db import models
-
-# Create your models here.
-# class Users(models.Model):
-#     UserId = models.AutoField(primary_key=True)
-#     UserPassword = models.CharField(max_length=50)
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
 
 
 class Stock(models.Model):
     ApiRef = models.CharField(max_length=50)
     StockID = models.AutoField(primary_key=True)
-    # High = models.DecimalField(decimal_places=2, max_digits=10)
-    # Low = models.DecimalField(decimal_places=2, max_digits=10)
-    # Change = models.DecimalField(decimal_places=2, max_digits=10)
-    # Previous_close = models.DecimalField(decimal_places=2, max_digits=10)
-    # Symbol = models.CharField(max_length=10)
-    # Company_name = models.CharField(max_length=256)
 
 
 class Watchlists(models.Model):
