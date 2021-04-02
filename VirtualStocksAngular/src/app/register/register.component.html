@@ -3,22 +3,22 @@
 
     <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name123" name="Username"
-         #Username="ngModel" [(ngModel)]="regArray.Username" required
-         [class.is-invalid]="Username.invalid && Username.touched">
-         <small class="text-danger" [class.d-none]="Username.valid || Username.untouched">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name123" name="username"
+         #username="ngModel" [(ngModel)]="regArray.username" required
+         [class.is-invalid]="username.invalid && username.touched">
+         <small class="text-danger" [class.d-none]="username.valid || username.untouched">
              Name is required
          </small>
-        <label for="floatingInput">Username</label>
+        <label for="floatingInput">username</label>
     </div>
     <div class="form-floating">
-        <input type="password" class="form-control"  placeholder="Userpassword" name="Userpassword" 
-        #Userpassword="ngModel" [(ngModel)]="regArray.Userpassword" required
-        [class.is-invalid]="Userpassword.invalid && Userpassword.touched">
-        <small class="text-danger" [class.d-none]="Userpassword.valid || Userpassword.untouched">
+        <input type="password" class="form-control"  placeholder="password" name="password" 
+        #password="ngModel" [(ngModel)]="regArray.password" required
+        [class.is-invalid]="password.invalid && password.touched">
+        <small class="text-danger" [class.d-none]="password.valid || password.untouched">
             password is required
         </small>
-        <label for="floatingUserpassword">Password</label>
+        <label for="floatingpassword">Password</label>
     </div>
     <br>
     <div class="form-floating">
@@ -36,5 +36,3 @@
 </form>
 </div>
 <br>
-<h3 class="text-danger">{{(errMsg.error.usernameError)|json}}</h3>
-<h3 class="text-danger">{{(errMsg.error.passwordError)|json}}</h3>

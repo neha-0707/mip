@@ -10,10 +10,10 @@ import { AuthService } from '../auth.service';
 export class RegisterComponent implements OnInit {
   errMsg="";
   regArray = {
-    Username:"",
-    Userpassword:"",
-    ConfPassword:""
-  };
+      "username": "",
+      "password":"",
+      "ConfPassword":""
+    };
   constructor(private service: AuthService,private router:Router) { }
 
   ngOnInit(): void {
@@ -26,10 +26,11 @@ export class RegisterComponent implements OnInit {
     this.service.registerUser(this.regArray).subscribe(
       res=>{
         console.log(res);
-        localStorage.setItem('token',res.token);
+        //localStorage.setItem('token',res.token);
         this.router.navigate(['/aboutus']);
       },
       err=>{
+        console.log("hello");
         console.log(err);
         this.errMsg = err;
       }
