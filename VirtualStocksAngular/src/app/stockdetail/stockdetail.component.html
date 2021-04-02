@@ -2,3 +2,11 @@
 <button (click)="buystock()">BUY</button>
 <button (click)="sellstock()">SELL</button>
 <button (click)="addtoWishlist()">+</button>
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">HIGH {{StockDetails.high}}</li>
+      <li class="list-group-item">LOW {{StockDetails.low}}</li>
+      <li class="list-group-item">PREVIOUS CLOSE  {{StockDetails.previous_close}}</li>
+      <li class="list-group-item">CHANGE {{StockDetails.change}}</li>
+    </ul>
+  </div>
