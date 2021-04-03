@@ -1,21 +1,14 @@
 from django.db import models
-<<<<<<< HEAD
 from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
-=======
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-from rest_framework.authtoken.models import Token
-from django.conf import settings
 from django.contrib import auth
 
 # Create your models here.
 # class Users(models.Model):
 #     UserId = models.AutoField(primary_key=True)
 #     UserPassword = models.CharField(max_length=50)
->>>>>>> b83401430d1d057ffc8e8c41d21d9f4835603e98
 
 
 class Stock(models.Model):

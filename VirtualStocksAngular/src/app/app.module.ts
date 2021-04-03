@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
@@ -33,6 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { BuyComponent } from './buy/buy.component';
 import { SellComponent } from './sell/sell.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import {TokenInterceptorService} from './token-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,12 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     Ng2OrderModule,
     NgxPaginationModule ,
   MatDialogModule ],
-  providers: [SharedService,AuthService,AuthGuard],
+  providers: [SharedService,AuthService,AuthGuard,
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent],
   entryComponents:[BuyComponent]
 })
