@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {  HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
@@ -34,6 +34,7 @@ import { BuyComponent } from './buy/buy.component';
 import { SellComponent } from './sell/sell.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import {TokenInterceptorService} from './token-interceptor.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,9 @@ import {TokenInterceptorService} from './token-interceptor.service';
     Ng2SearchPipeModule,
     Ng2OrderModule,
     NgxPaginationModule ,
-  MatDialogModule ],
+    MatDialogModule,
+    
+],
   providers: [SharedService,AuthService,AuthGuard,
   {
     provide:HTTP_INTERCEPTORS,

@@ -30,7 +30,6 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/aboutus']);
       },
       err=>{
-        console.log("hello");
         console.log(err);
         this.errMsg = err;
       }
