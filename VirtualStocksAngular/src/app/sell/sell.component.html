@@ -1,14 +1,14 @@
-<h2>sell {{stockname}}</h2>
+<h2>sell {{stockid}}</h2>
 
 <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
 <form #quantityForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
-    {{quantityForm.value | json}}
     <div class="form-group">
     <label >Quantity</label>
     <input [(ngModel)]="quantity" oninput="validity.valid||(value='');" required type="number" #quant="ngModel" [class.is-invalid]="quant.invalid && quant.touched"  class="form-control" name="quan" ngModel min="1">
     <small class=text-danger [class.d-none]="quant.valid || quant.untouched">Quantity is required</small>
     {{quant.className}}
 </div>
-    <button [disabled]="quantityForm.form.invalid" class="btn btn-primary" type="submit" [mat-dialog-close]>BUY STOCK</button>
-
+    <button [disabled]="quantityForm.form.invalid" class="btn btn-primary" type="submit" >SELL STOCK</button>
+<p class=text-success >{{respone.detail}}</p>
+<p class=text-danger >{{errormsg.error.detail}}</p>
 </form>

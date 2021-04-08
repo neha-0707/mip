@@ -46,7 +46,7 @@ StockId:string;
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
     dialogConfig.width="60%";
-    dialogConfig.data=this.StockName;
+    dialogConfig.data=this.StockId;
     this.dialog.open(BuyComponent,dialogConfig);
     
   }
@@ -56,7 +56,7 @@ StockId:string;
     dialogConfig.disableClose=false;
     dialogConfig.autoFocus=true;
     dialogConfig.width="60%";
-    dialogConfig.data=this.StockName;
+    dialogConfig.data=this.StockId;
     this.dialog.open(SellComponent,dialogConfig); 
   }
   addtoWishlist()
