@@ -10,8 +10,8 @@ import { SharedService } from '../shared.service';
 })
 export class SellComponent implements OnInit {
 quantity="";
-respone="";
-errormsg="";
+respone:any;
+errormsg:any;
   constructor(@Inject(MAT_DIALOG_DATA) public stockid:any,
   public diaglogRef: MatDialogRef<BuyComponent>,
   public service:SharedService) { }

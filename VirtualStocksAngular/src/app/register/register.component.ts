@@ -8,7 +8,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  errMsg="";
+  errMsg:any;
   regArray = {
       "username": "",
       "password":"",

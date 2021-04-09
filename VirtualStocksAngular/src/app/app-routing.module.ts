@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { StockdetailComponent } from './stockdetail/stockdetail.component';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [{path: 'leaderboard',component:LeaderboardComponent},
 {path: 'aboutus',component: AboutusComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [{path: 'leaderboard',component:LeaderboardComponent},
 {path:'search', component:SearchbarComponent},
 {path:'transactions',component:TransactionsComponent,canActivate:[AuthGuard]},
 {path:'register',component:RegisterComponent},
-{path:'stockdetail',component:StockdetailComponent}
+{path:'stockdetail',component:StockdetailComponent},
+{path:'wishlist',component:WishlistComponent}
 ];
 
 

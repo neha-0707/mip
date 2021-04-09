@@ -1,1 +1,23 @@
-<p>wishlist works!</p>
+
+<table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Stock</th>
+        <th scope="col">Average Price</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        
+        <tr *ngFor="let obj of wlist">
+             <td>{{obj.company_name | json}}</td>
+            <td>{{obj.averagePrice | json}}</td>
+            <mat-icon (click)="onClick(obj.symbol)">remove_circle_outline</mat-icon>
+        </tr>
+
+      
+     
+    </tbody>
+  </table>

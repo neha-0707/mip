@@ -52,7 +52,6 @@ export class SearchbarComponent implements OnInit {
    // })
    const stockname = s ? s : null;
    // Pass along the hero id if available
-   // so that the HeroList component can select that item.
    this.router.navigate(['/stockdetail', { name: stockname }]);
   }
   

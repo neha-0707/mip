@@ -24,6 +24,8 @@ StockName:string;
   constructor(private route: ActivatedRoute,private service: SendstockService,private dialog: MatDialog,private serivcew:WishlistService) { }
 StockDetails:any;
 StockId:string;
+watchListresponse:any;
+watchListerror:any;
   ngOnInit(): void {
     this.StockName=this.route.snapshot.paramMap.get('name');
     this.StockId=this.getKeyByValue(this.StockIdName,this.StockName);
@@ -61,10 +63,15 @@ StockId:string;
   }
   addtoWishlist()
   {
+    this.watchListerror={};
+    this.watchListresponse={};
     this.serivcew.addtowishlist(this.StockId).subscribe(res=>{
       console.log(res);
+      this.watchListresponse=res;
     },
-    err=>console.log(err));
+    err=>{console.log(err);
+      this.watchListerror=err;
+    });
     //write serivce to send this to the wishlist db
   }
   
