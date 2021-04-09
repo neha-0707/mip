@@ -24,7 +24,8 @@
     
     <input type="submit" [disabled]="loginForm.form.invalid" class="btn btn-primary">
 </form>
-<br>
+<br><p class="text-danger"> {{errMsg.error.non_field_errors}}</p>
+
 <div class="text-success">New here?</div>
 <a href=# >Register Here</a>
 </div>

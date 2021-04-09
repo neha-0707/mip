@@ -24,5 +24,7 @@ readonly moversURL="http://127.0.0.1:8000/api/";
   sellStock(stockid,quantity){
     return this.http.post<any>(this.moversURL+'sell-stock/'+stockid+'/'+quantity,null);
   }
-  
+  getTransactions():Observable<any[]>{
+    return this.http.get<any[]>(this.moversURL+'view-transactions');
+  }
 }
