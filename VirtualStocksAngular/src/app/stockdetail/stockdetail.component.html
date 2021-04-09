@@ -1,4 +1,6 @@
 <h2>{{StockName}}</h2>
+<iframe [src]="urlSafe" frameBorder='0' scrolling='no' width='800' height='420'></iframe>
+<br>
 <button (click)="buystock()">BUY</button>
 <button (click)="sellstock()">SELL</button>
 <button (click)="addtoWishlist()">+</button>
@@ -11,4 +13,6 @@
       <p class="text-success">{{watchListresponse.detail}}</p>
       <p class="text-danger">{{watchListerror.error.detail}}</p>
     </ul>
+    
   </div>
+
