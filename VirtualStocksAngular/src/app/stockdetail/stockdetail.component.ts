@@ -49,6 +49,8 @@ urlSafe: SafeResourceUrl;
       this.StockDetails = data;
       console.log(this.StockDetails);
     });
+    this.watchListerror=null;
+    this.watchListresponse=null;
   }
   buystock()
   {
@@ -72,8 +74,8 @@ urlSafe: SafeResourceUrl;
   }
   addtoWishlist()
   {
-    this.watchListerror={};
-    this.watchListresponse={};
+    this.watchListerror=null;
+    this.watchListresponse=null;
     this.serivcew.addtowishlist(this.StockId).subscribe(res=>{
       console.log(res);
       this.watchListresponse=res;

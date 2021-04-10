@@ -12,7 +12,7 @@
     <tbody>
       <tr *ngFor="let tran of transactions">
         <th scope="row">{{tran.Timestamp| date:'medium'}}</th>
-        <td>{{tran.Stock}}</td>
+        <td>{{tran.StockModel}}</td>
         <td>{{tran.Type}}</td>
         <td>{{tran.Quantity}}</td>
         <td>{{tran.Price}}</td>

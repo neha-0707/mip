@@ -1,4 +1,4 @@
-<h2>{{StockName}}</h2>
+<h2>{{StockDetails.company_name}}</h2>
 <iframe [src]="urlSafe" frameBorder='0' scrolling='no' width='800' height='420'></iframe>
 <br>
 <button (click)="buystock()">BUY</button>
@@ -10,8 +10,8 @@
       <li class="list-group-item">LOW {{StockDetails.low}}</li>
       <li class="list-group-item">PREVIOUS CLOSE  {{StockDetails.previous_close}}</li>
       <li class="list-group-item">CHANGE {{StockDetails.change}}</li>
-      <p class="text-success">{{watchListresponse.detail}}</p>
-      <p class="text-danger">{{watchListerror.error.detail}}</p>
+      <p class="text-success" *ngIf="watchListresponse " >{{watchListresponse.detail}}</p>
+      <p class="text-danger"  *ngIf="watchListerror">{{watchListerror.error.detail}}</p>
     </ul>
     
   </div>
