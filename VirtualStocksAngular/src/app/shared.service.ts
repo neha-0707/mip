@@ -27,4 +27,7 @@ readonly moversURL="http://127.0.0.1:8000/api/";
   getTransactions():Observable<any[]>{
     return this.http.get<any[]>(this.moversURL+'view-transactions');
   }
+  getPortfolio():Observable<any[]>{
+    return this.http.get<any[]>(this.moversURL+'view-portfolio');
+  }
 }
