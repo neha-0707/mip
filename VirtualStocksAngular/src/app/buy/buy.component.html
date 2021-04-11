@@ -2,12 +2,14 @@
 <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
 <form #quantityForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
     <div class="form-group">
-    <label >Quantity</label>
+    <label >Enter Quantity</label><br>
     <input [(ngModel)]="quantity" oninput="validity.valid||(value='');" required type="number" #quant="ngModel" [class.is-invalid]="quant.invalid && quant.touched"  class="form-control" name="quan" ngModel min="1">
     <small class=text-danger [class.d-none]="quant.valid || quant.untouched">Quantity is required</small>
     {{quant.className}}
 </div>
+<br>
     <button [disabled]="quantityForm.form.invalid" class="btn btn-primary" type="submit" >BUY STOCK</button>
-<p class=text-success>{{respone.detail}}</p>
+<br>
+    <p class=text-success>{{respone.detail}}</p>
 <p class=text-danger >{{errormsg.error.detail}}</p>
 </form>
