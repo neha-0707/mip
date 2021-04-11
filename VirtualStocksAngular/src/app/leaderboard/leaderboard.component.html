@@ -1,18 +1,22 @@
-
+<div style="padding:25px;">
 <table class="table table-striped">
     <thead>
         <tr>
-          
-          <th scope="col">UserID</th>
-          <th scope="col">Passwordd</th>
+          <th>Rank</th>
+          <th scope="col">Username</th>
+          <th scope="col">UnrealizedValueCurrent</th>
+          <th scope="col">UnrealizedValueInitial</th>
+          <th scope="col">RealizedValue</th>
         </tr>
       </thead>
       <tbody >
-        <tr *ngFor="let dataitems of LeaderList">
-          
-          <td>{{dataitems.UserId}}</td>
-          <td>{{dataitems.UserPassword}}</td>
+        <tr *ngFor="let dataitems of LeaderList;let i=index;">
+          <td>{{i}}</td>
+          <td>{{dataitems.username}}</td>
+          <td>{{dataitems.UnrealizedValueCurrent}}</td>
+          <td>{{dataitems.UnrealizedValueInitial}}</td>
+          <td>{{dataitems.RealizedValue}}</td>
         </tr>
       </tbody>
   </table>
-  
+</div>

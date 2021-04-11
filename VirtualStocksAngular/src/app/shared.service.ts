@@ -10,7 +10,7 @@ readonly moversURL="http://127.0.0.1:8000/api/";
   constructor(private http: HttpClient) {}
 
   getAll():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl+'user/');
+    return this.http.get<any[]>(this.moversURL+'view-leaderboard');
   }
   getGainers():Observable<any[]>{
     return this.http.get<any[]>(this.moversURL+'gainers');

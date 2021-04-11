@@ -7,7 +7,7 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./leaderboard.component.scss']
 })
 export class LeaderboardComponent implements OnInit {
-  LeaderList = [];
+  LeaderList:any;
   constructor(private service: SharedService) { }
 
   ngOnInit(): void {
