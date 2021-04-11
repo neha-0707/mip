@@ -34,6 +34,7 @@ import { BuyComponent } from './buy/buy.component';
 import { SellComponent } from './sell/sell.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import {TokenInterceptorService} from './token-interceptor.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {TokenInterceptorService} from './token-interceptor.service';
     StockdetailComponent,
     BuyComponent,
     SellComponent,
-    WishlistComponent
+    WishlistComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
