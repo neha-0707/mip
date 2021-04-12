@@ -37,6 +37,7 @@ import {TokenInterceptorService} from './token-interceptor.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { GainersComponent } from './gainers/gainers.component';
 import { LosersComponent } from './losers/losers.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { LosersComponent } from './losers/losers.component';
     WishlistComponent,
     PagenotfoundComponent,
     GainersComponent,
-    LosersComponent
+    LosersComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

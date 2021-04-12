@@ -9,6 +9,7 @@ import { LosersComponent } from './losers/losers.component';
 import { MoversComponent } from './movers/movers.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { StockdetailComponent } from './stockdetail/stockdetail.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
 {path:'register',component:RegisterComponent},
 {path:'stockdetail',component:StockdetailComponent,canActivate:[AuthGuard]},
 {path:'wishlist',component:WishlistComponent,canActivate:[AuthGuard]},
+{path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
 {path:'**',component:PagenotfoundComponent}
 ];
 
