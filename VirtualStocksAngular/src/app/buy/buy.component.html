@@ -1,4 +1,4 @@
-<h2>{{stockid}}</h2>
+<h2 *ngIf="stockid">{{stockid}}</h2>
 <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
 <form #quantityForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
     <div class="form-group">
@@ -10,6 +10,6 @@
 <br>
     <button [disabled]="quantityForm.form.invalid" class="btn btn-primary" type="submit" >BUY STOCK</button>
 <br>
-    <p class=text-success>{{respone.detail}}</p>
-<p class=text-danger >{{errormsg.error.detail}}</p>
+    <p class=text-success *ngIf="respone">{{respone.detail}}</p>
+<p class=text-danger *ngIf="errormsg">{{errormsg.error.detail}}</p>
 </form>

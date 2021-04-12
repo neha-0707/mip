@@ -1,21 +1,26 @@
 <div style="padding: 20px;">
-<h2>{{StockDetails.company_name}}</h2>
+<h2 *ngIf="StockDetails">{{StockDetails.company_name}}</h2>
 <iframe [src]="urlSafe" frameBorder='0' scrolling='no' width='800' height='420'></iframe>
 <br>
 <button type="button" class="btn btn-info" (click)="buystock()">BUY</button>&nbsp;&nbsp;
 <button type="button" class="btn btn-warning" (click)="sellstock()">SELL</button>&nbsp;&nbsp;
 <button type="button" class="btn btn-success" (click)="addtoWishlist()">+Wishlist</button>
 <br><br>
-<div class="card" style="width: 18rem;">
+<div class="card border-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header"><h3>Details</h3> </div>
+  <div class="card-body text-dark">
+ 
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">HIGH {{StockDetails.high}}</li>
-      <li class="list-group-item">LOW {{StockDetails.low}}</li>
-      <li class="list-group-item">PREVIOUS CLOSE  {{StockDetails.previous_close}}</li>
-      <li class="list-group-item">CHANGE {{StockDetails.change}}</li>
-      <p class="text-success" *ngIf="watchListresponse " >{{watchListresponse.detail}}</p>
+      <li class="list-group-item"  *ngIf="StockDetails" >PRICE {{StockDetails.averagePrice}}</li>
+      <li class="list-group-item"  *ngIf="StockDetails" >HIGH {{StockDetails.high}}</li>
+      <li class="list-group-item" *ngIf="StockDetails">LOW {{StockDetails.low}}</li>
+      <li class="list-group-item" *ngIf="StockDetails">PREVIOUS CLOSE  {{StockDetails.previous_close}}</li>
+      <li class="list-group-item" *ngIf="StockDetails">CHANGE {{StockDetails.change}}</li>
+      <p class="text-success" *ngIf="watchListresponse" >{{watchListresponse.detail}}</p>
       <p class="text-danger"  *ngIf="watchListerror">{{watchListerror.error.detail}}</p>
     </ul>
-    
   </div>
+</div>
+
 </div>
 

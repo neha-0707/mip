@@ -35,19 +35,14 @@ urlSafe: SafeResourceUrl;
   ngOnInit(): void {
     this.StockName=this.route.snapshot.paramMap.get('name');
     this.StockId=this.getKeyByValue(this.StockIdName,this.StockName);
-      this.service.stockname(this.StockName).subscribe(data=>{
-      alert(data.toString());
-      
-    });
+     
     this.StockUrl='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=72C087E0262F442292E631693DFB565E&symbol='+this.StockId+'&palette=Financial-Light';
-    console.log(this.StockUrl);
     this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.StockUrl);
     this.getStockDetails();
   }
   getStockDetails(){
     this.service.stockname(this.StockId).subscribe(data=>{
       this.StockDetails = data;
-      console.log(this.StockDetails);
     });
     this.watchListerror=null;
     this.watchListresponse=null;
@@ -77,10 +72,10 @@ urlSafe: SafeResourceUrl;
     this.watchListerror=null;
     this.watchListresponse=null;
     this.serivcew.addtowishlist(this.StockId).subscribe(res=>{
-      console.log(res);
+
       this.watchListresponse=res;
     },
-    err=>{console.log(err);
+    err=>{
       this.watchListerror=err;
     });
     //write serivce to send this to the wishlist db

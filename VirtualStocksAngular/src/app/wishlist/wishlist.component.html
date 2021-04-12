@@ -11,12 +11,12 @@
     <tbody>
       
         
-        <tr *ngFor="let obj of wlist">
-             <td>{{obj.company_name | json}}</td>
+        <tr  *ngFor="let obj of wlist">
+             <td style="cursor:pointer;" (click)="onCli(obj.company_name)">{{obj.company_name | json}}</td>
             <td>{{obj.averagePrice | json}}</td>
             <mat-icon (click)="onClick(obj.symbol)">remove_circle_outline</mat-icon>
         </tr>
-
+    
       
      
     </tbody>

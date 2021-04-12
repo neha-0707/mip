@@ -24,12 +24,7 @@ topLoser:any;
 
 getmovers()
 {
-  this.service.getGainers().subscribe(res=>{
-    this.topGainer=res;
-    console.log(res);
-
-  },
-  err=>{console.log(err);})
+ 
   this.service.getLosers().subscribe(res=>{
     this.topLoser=res;
     console.log(res);

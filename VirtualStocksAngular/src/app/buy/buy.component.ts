@@ -27,14 +27,13 @@ this.diaglogRef.close();
   {
     this.errormsg="";
     this.respone="";
-    console.log(this.quantity);
     this.service.buyStock(this.stockid,this.quantity).subscribe(
       res=>{
         this.respone=res;
-        console.log(res);
+
 
       },
-      err=>{console.log(err);
+      err=>{
       this.errormsg=err;}
     )
 

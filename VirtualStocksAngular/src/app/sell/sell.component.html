@@ -9,6 +9,6 @@
     {{quant.className}}
 </div>
     <button [disabled]="quantityForm.form.invalid" class="btn btn-primary" type="submit" >SELL STOCK</button>
-<p class=text-success >{{respone.detail}}</p>
-<p class=text-danger >{{errormsg.error.detail}}</p>
+<p class=text-success *ngIf="respone" >{{respone.detail}}</p>
+<p class=text-danger *ngIf="errormsg">{{errormsg.error.detail}}</p>
 </form>

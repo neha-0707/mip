@@ -35,6 +35,8 @@ import { SellComponent } from './sell/sell.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import {TokenInterceptorService} from './token-interceptor.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { GainersComponent } from './gainers/gainers.component';
+import { LosersComponent } from './losers/losers.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     BuyComponent,
     SellComponent,
     WishlistComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    GainersComponent,
+    LosersComponent
   ],
   imports: [
     BrowserModule,

@@ -46,7 +46,6 @@ export class SearchbarComponent implements OnInit {
   }
   onClick(s:string)
   {
-   console.log(s);
     //this.service.stockname(s).subscribe(data=>{
       //alert(data.toString());
    // })
