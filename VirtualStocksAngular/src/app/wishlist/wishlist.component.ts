@@ -21,7 +21,8 @@ this.getwishlist();
 getwishlist()
 {
   this.service.getwishList().subscribe(data=>{
-    this.wlist=data;
+    if(Object.keys(data).length==0){this.wlist=[];}
+    else this.wlist=data;
   
   },
   err=>{console.log(err);

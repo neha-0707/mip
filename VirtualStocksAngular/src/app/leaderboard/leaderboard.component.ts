@@ -9,21 +9,24 @@ import { SharedService } from '../shared.service';
 export class LeaderboardComponent implements OnInit {
   LeaderList:any;
   constructor(private service: SharedService) { }
-
+  
   ngOnInit(): void {
     this.getLeaderBoard();
-    this.getList();
+    
   }
   
   getList(){
     this.service.getAll().subscribe(data=>{
       this.LeaderList = data;
-      console.log(this.LeaderList);
+    this.LeaderList=this.LeaderList.sort((a, b) => ((a.UnrealizedValueCurrent-a.UnrealizedValueInitial) < (b.UnrealizedValueCurrent-b.UnrealizedValueInitial)) ? 1 : -1)
+      console.log("sorted",this.LeaderList);
+
     });
   }
   getLeaderBoard()
   {
     this.service.updateLeaderboard().subscribe(data=>{
+      this.getList();
     }); 
   }
 }

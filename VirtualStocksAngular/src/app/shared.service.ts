@@ -34,7 +34,8 @@ readonly moversURL="http://127.0.0.1:8000/api/";
     return this.http.get<any[]>(this.moversURL+'graph');
   }
   updateLeaderboard():Observable<any[]>{
-    return this.http.get<any[]>(this.moversURL+'update-leader-board');
+    
+    return this.http.post<any[]>(this.moversURL+'update-leaderboard',null);
   }
   getUserDetails():Observable<any[]>{
     return this.http.get<any[]>(this.moversURL+'user-details');

@@ -22,6 +22,7 @@ this.getPieGraph();
   {
     this.service.getGraph().subscribe(res=>{
       this.urlgraph=res;
+     
     },
     err=>{
       this.errmsg=err;
