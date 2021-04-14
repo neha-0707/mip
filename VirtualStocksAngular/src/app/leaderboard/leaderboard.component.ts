@@ -11,6 +11,7 @@ export class LeaderboardComponent implements OnInit {
   constructor(private service: SharedService) { }
 
   ngOnInit(): void {
+    this.getLeaderBoard();
     this.getList();
   }
   
@@ -19,5 +20,10 @@ export class LeaderboardComponent implements OnInit {
       this.LeaderList = data;
       console.log(this.LeaderList);
     });
+  }
+  getLeaderBoard()
+  {
+    this.service.updateLeaderboard().subscribe(data=>{
+    }); 
   }
 }
