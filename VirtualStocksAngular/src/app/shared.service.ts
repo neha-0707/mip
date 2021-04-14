@@ -33,4 +33,10 @@ readonly moversURL="http://127.0.0.1:8000/api/";
   getGraph():Observable<any[]>{
     return this.http.get<any[]>(this.moversURL+'graph');
   }
+  getUserDetails():Observable<any[]>{
+    return this.http.get<any[]>(this.moversURL+'user-details');
+  }
+  getPieGraph():Observable<any[]>{
+    return this.http.get<any[]>(this.moversURL+'portfolio-graph');
+  }
 }
