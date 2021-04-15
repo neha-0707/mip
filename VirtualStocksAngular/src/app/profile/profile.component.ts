@@ -49,5 +49,6 @@ this.getPieGraph();
     },
     err=>{console.log(err);}) 
   }
+  
 
 }

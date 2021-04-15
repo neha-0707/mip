@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BuyComponent } from '../buy/buy.component';
 import { SellComponent } from '../sell/sell.component';
 import { SendstockService } from '../sendstock.service';
+import { SharedService } from '../shared.service';
 import { WishlistService } from '../wishlist.service';
 
 @Component({
@@ -24,13 +25,17 @@ StockName:string;
    "SUPERSPIN": "Super Spinning Mills Limited", "SUPPETRO": "Supreme Petrochem Limited", "SUPRAJIT": "Suprajit Engineering Limited", "SUPREMEENG": "Supreme Engineering Limited", "SUPREMEIND": "Supreme Industries Limited", "SURANASOL": "Surana Solar Limited", "SURANAT&P": "Surana Telecom and Power Limited", "SURYALAXMI": "Suryalakshmi Cotton Mills Limited", "SURYAROSNI": "Surya Roshni Limited", "SURYODAY": "Suryoday Small Finance Bank Limited", "SUTLEJTEX": "Sutlej Textiles and Industries Limited", "SUULD": "Suumaya Industries Limited", "SUVEN": "Suven Life Sciences Limited", "SUVENPHAR": "Suven Pharmaceuticals Limited", "SUVIDHAA": "Suvidhaa Infoserve Limited", "SUZLON": "Suzlon Energy Limited", "SWANENERGY": "Swan Energy Limited", "SWARAJENG": "Swaraj Engines Limited", "SWELECTES": "Swelect Energy Systems Limited", "SWSOLAR": "Sterling And Wilson Solar Limited", "SYMPHONY": "Symphony Limited", "SYNCOM": "Syncom Healthcare Limited", "SYNGENE": "Syngene International Limited", "TAINWALCHM": "Tainwala Chemical and Plastic (I) Limited", "TAJGVK": "Taj GVK Hotels & Resorts Limited", "TAKE": "Take Solutions Limited", "TALBROAUTO": "Talbros Automotive Components Limited", "TANLA": "Tanla Platforms Limited", "TANTIACONS": "Tantia Constructions Limited", "TARC": "Anant Raj Global Limited", "TARMAT": "Tarmat Limited", "TASTYBITE": "Tasty Bite Eatables Limited", "TATACHEM": "Tata Chemicals Limited", "TATACOFFEE": "Tata Coffee Limited", "TATACOMM": "Tata Communications Limited", "TATACONSUM": "TATA CONSUMER PRODUCTS LIMITED", "TATAELXSI": "Tata Elxsi Limited", "TATAINVEST": "Tata Investment Corporation Limited", "TATAMETALI": "Tata Metaliks Limited", "TATAMOTORS": "Tata Motors Limited", "TATAMTRDVR": "Tata Motors Limited", "TATAPOWER": "Tata Power Company Limited", "TATASTEEL": "Tata Steel Limited", "TATASTLBSL": "Tata Steel Bsl Limited", "TATASTLLP": "Tata Steel Long Products Limited", "TBZ": "Tribhovandas Bhimji Zaveri Limited", "TCI": "Transport Corporation of India Limited", "TCIDEVELOP": "TCI Developers Limited", "TCIEXP": "TCI Express Limited", "TCIFINANCE": "TCI Finance Limited", "TCNSBRANDS": "TCNS Clothing Co. Limited", "TCPLPACK": "TCPL Packaging Limited", "TCS": "Tata Consultancy Services Limited", "TDPOWERSYS": "TD Power Systems Limited", "TEAMLEASE": "Teamlease Services Limited", "TECHIN": "Techindia Nirman Limited", "TECHM": "Tech Mahindra Limited", "TECHNOE": "Techno Electric & Engineering Company Limited", "TEJASNET": "Tejas Networks Limited", "TERASOFT": "Tera Software Limited", "TEXINFRA": "Texmaco Infrastructure & Holdings Limited", "TEXMOPIPES": "Texmo Pipes and Products Limited", "TEXRAIL": "Texmaco Rail & Engineering Limited", "TFCILTD": "Tourism Finance Corporation of India Limited", "TFL": "Transwarranty Finance Limited", "TGBHOTELS": "TGB Banquets And Hotels Limited", "THANGAMAYL": "Thangamayil Jewellery Limited", "THEINVEST": "The Investment Trust Of India Limited", "THEMISMED": "Themis Medicare Limited", "THERMAX": "Thermax Limited", "THIRUSUGAR": "Thiru Arooran Sugars Limited", "THOMASCOOK": "Thomas Cook  (India)  Limited", "THOMASCOTT": "Thomas Scott (India) Limited", "THYROCARE": "Thyrocare Technologies Limited", "TI": "Tilaknagar Industries Limited", "TIDEWATER": "Tide Water Oil Company (India) Limited", "TIIL": "Technocraft Industries (India) Limited", "TIINDIA": "Tube Investments of India Limited", "TIJARIA": "Tijaria Polypipes Limited", "TIL": "TIL Limited", "TIMESGTY": "Times Guaranty Limited", "TIMETECHNO": "Time Technoplast Limited", "TIMKEN": "Timken India Limited", "TINPLATE": "The Tinplate Company of India Limited", "TIPSINDLTD": "TIPS Industries Limited", "TIRUMALCHM": "Thirumalai Chemicals Limited", "TIRUPATIFL": "Tirupati Forge Limited", "TITAN": "Titan Company Limited", "TMRVL": "The Mandhana Retail Ventures Limited", "TNPETRO": "Tamilnadu PetroProducts Limited", "TNPL": "Tamil Nadu Newsprint & Papers Limited", "TNTELE": "Tamilnadu Telecommunication Limited", "TOKYOPLAST": "Tokyo Plast International Limited", "TORNTPHARM": "Torrent Pharmaceuticals Limited", "TORNTPOWER": "Torrent Power Limited", "TOTAL": "Total Transport Systems Limited", "TOUCHWOOD": "Touchwood Entertainment Limited", "TPLPLASTEH": "TPL Plastech Limited", "TREEHOUSE": "Tree House Education & Accessories Limited", "TREJHARA": "TREJHARA SOLUTIONS LIMITED", "TRENT": "Trent Limited", "TRF": "TRF Limited", "TRIDENT": "Trident Limited", "TRIGYN": "Trigyn Technologies Limited", "TRIL": "Transformers And Rectifiers (India) Limited", "TRITURBINE": "Triveni Turbine Limited", "TRIVENI": "Triveni Engineering & Industries Limited", "TTKHLTCARE": "TTK Healthcare Limited", "TTKPRESTIG": "TTK Prestige Limited", "TTL": "T T Limited", "TTML": "Tata Teleservices (Maharashtra) Limited", "TV18BRDCST": "TV18 Broadcast Limited", "TVSELECT": "TVS Electronics Limited", "TVSMOTOR": "TVS Motor Company Limited", "TVSSRICHAK": "TVS Srichakra Limited", "TVTODAY": "TV Today Network Limited", "TVVISION": "TV Vision Limited", "TWL": "Titagarh Wagons Limited", "UBL": "United Breweries Limited", "UCALFUEL": "Ucal Fuel Systems Limited", "UCOBANK": "UCO Bank", "UFLEX": "UFLEX Limited", "UFO": "UFO Moviez India Limited", "UGARSUGAR": "The Ugar Sugar Works Limited", "UJAAS": "Ujaas Energy Limited", "UJJIVAN": "Ujjivan Financial Services Limited", "UJJIVANSFB": "Ujjivan Small Finance Bank Limited", "ULTRACEMCO": "UltraTech Cement Limited", "UMANGDAIRY": "Umang Dairies Limited", "UMESLTD": "Usha Martin Education & Solutions Limited", "UNICHEMLAB": "Unichem Laboratories Limited", "UNIDT": "United Drilling Tools Limited", "UNIENTER": "Uniphos Enterprises Limited", "UNIONBANK": "Union Bank of India", "UNITECH": "Unitech Limited", "UNITEDTEA": "The United Nilgiri Tea Estates Company Limited", "UNITY": "Unity Infraprojects Limited", "UNIVASTU": "Univastu India Limited", "UNIVCABLES": "Universal Cables Limited", "UNIVPHOTO": "Universus Photo Imagings Limited", "UPL": "UPL Limited", "URJA": "Urja Global Limited", "USHAMART": "Usha Martin Limited", "UTIAMC": "UTI Asset Management Company Limited", "UTTAMSTL": "Uttam Galva Steels Limited", "UTTAMSUGAR": "Uttam Sugar Mills Limited", "V2RETAIL": "V2 Retail Limited", "VADILALIND": "Vadilal Industries Limited", "VAIBHAVGBL": "Vaibhav Global Limited", "VAISHALI": "Vaishali Pharma Limited", "VAKRANGEE": "Vakrangee Limited", "VALIANTORG": "Valiant Organics Limited", "VARDHACRLC": "Vardhman Acrylics Limited", "VARDMNPOLY": "Vardhman Polytex Limited", "VARROC": "Varroc Engineering Limited", "VASCONEQ": "Vascon Engineers Limited", "VASWANI": "Vaswani Industries Limited", "VBL": "Varun Beverages Limited", "VEDL": "Vedanta Limited", "VENKEYS": "Venky's (India) Limited", "VENUSREM": "Venus Remedies Limited", "VERTOZ": "Vertoz Advertising Limited", "VESUVIUS": "Vesuvius India Limited", "VETO": "Veto Switchgears And Cables Limited", "VGUARD": "V-Guard Industries Limited", "VHL": "Vardhman Holdings Limited", "VICEROY": "Viceroy Hotels Limited", "VIDEOIND": "Videocon Industries Limited", "VIDHIING": "Vidhi Specialty Food Ingredients Limited", "VIJIFIN": "Viji Finance Limited", "VIKASECO": "Vikas EcoTech Limited", "VIKASMCORP": "Vikas Multicorp Limited", "VIKASPROP": "Vikas Proppant & Granite Limited", "VIKASWSP": "Vikas WSP Limited", "VIMTALABS": "Vimta Labs Limited", "VINATIORGA": "Vinati Organics Limited", "VINDHYATEL": "Vindhya Telelinks Limited", "VINYLINDIA": "Vinyl Chemicals (India) Limited", "VIPCLOTHNG": "VIP Clothing Limited", "VIPIND": "VIP Industries Limited", "VIPULLTD": "Vipul Limited", "VISAKAIND": "Visaka Industries Limited", "VISASTEEL": "Visa Steel Limited", "VISHAL": "Vishal Fabrics Limited", "VISHNU": "Vishnu Chemicals Limited", "VISHWARAJ": "Vishwaraj Sugar Industries Limited", "VIVIDHA": "Visagar Polytex Limited", "VIVIMEDLAB": "Vivimed Labs Limited", "VLSFINANCE": "VLS Finance Limited", "VMART": "V-Mart Retail Limited", "VOLTAMP": "Voltamp Transformers Limited", "VOLTAS": "Voltas Limited", "VRLLOG": "VRL Logistics Limited", "VSSL": "Vardhman Special Steels Limited", "VSTIND": "VST Industries Limited", "VSTTILLERS": "V.S.T Tillers Tractors Limited", "VTL": "Vardhman Textiles Limited", "WABAG": "VA Tech Wabag Limited", "WABCOINDIA": "WABCO India Limited", "WALCHANNAG": "Walchandnagar Industries Limited", "WANBURY": "Wanbury Limited", "WATERBASE": "Waterbase Limited", "WEALTH": "Wealth First Portfolio Managers Limited", "WEBELSOLAR": "Websol Energy System Limited", "WEIZMANIND": "Weizmann Limited", "WELCORP": "Welspun Corp Limited", "WELENT": "Welspun Enterprises Limited", "WELINV": "Welspun Investments and Commercials Limited", "WELSPUNIND": "Welspun India Limited", "WENDT": "Wendt (India) Limited", "WESTLIFE": "Westlife Development Ltd", "WHEELS": "Wheels India Limited", "WHIRLPOOL": "Whirlpool of India Limited", "WILLAMAGOR": "Williamson Magor & Company Limited", "WINDMACHIN": "Windsor Machines Limited", "WIPL": "The Western India Plywoods Limited", "WIPRO": "Wipro Limited", "WOCKPHARMA": "Wockhardt Limited", "WONDERLA": "Wonderla Holidays Limited", "WORTH": "Worth Peripherals Limited", "WSI": "W S Industries (I) Limited", "WSTCSTPAPR": "West Coast Paper Mills Limited", "XCHANGING": "Xchanging Solutions Limited", "XELPMOC": "Xelpmoc Design And Tech Limited", "XPROINDIA": "Xpro India Limited", "YAARII": "Yaarii Digital Integrated Services Limited", "YESBANK": "Yes Bank Limited", "ZEEL": "Zee Entertainment Enterprises Limited", "ZEELEARN": "Zee Learn Limited", "ZEEMEDIA": "Zee Media Corporation Limited", "ZENITHEXPO": "Zenith Exports Limited", "ZENITHSTL": "Zenith Steel Pipes & Industries Limited", "ZENSARTECH": "Zensar Technologies Limited", "ZENTEC": "Zen Technologies Limited", "ZODIACLOTH": "Zodiac Clothing Company Limited", "ZODJRDMKJ": "Zodiac JRD- MKJ Limited", "ZOTA": "Zota Health Care LImited", "ZUARI": "Zuari Agro Chemicals Limited", "ZUARIGLOB": "Zuari Global Limited", "ZYDUSWELL": "Zydus Wellness Limited"};
   constructor(private route: ActivatedRoute,
     public sanitizer: DomSanitizer ,
-    private service: SendstockService,private dialog: MatDialog,private serivcew:WishlistService) { }
+    private service: SendstockService,
+    private service1: SharedService,
+    private dialog: MatDialog,private serivcew:WishlistService) { }
 StockDetails:any;
 StockUrl:any;
 StockId:string;
 watchListresponse:any;
 watchListerror:any;
 urlSafe: SafeResourceUrl;
+graphUrl1:any;
+stocknews:any;
 
   ngOnInit(): void {
     this.StockName=this.route.snapshot.paramMap.get('name');
@@ -38,7 +43,10 @@ urlSafe: SafeResourceUrl;
      
     this.StockUrl='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=72C087E0262F442292E631693DFB565E&symbol='+this.StockId+'&palette=Financial-Light';
     this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.StockUrl);
+    this.getNewsGraph();
+    this.getNewsLink();
     this.getStockDetails();
+    
   }
   getStockDetails(){
     this.service.stockname(this.StockId).subscribe(data=>{
@@ -46,6 +54,7 @@ urlSafe: SafeResourceUrl;
     });
     this.watchListerror=null;
     this.watchListresponse=null;
+    
   }
   buystock()
   {
@@ -84,7 +93,31 @@ urlSafe: SafeResourceUrl;
    getKeyByValue(object, value) {
     return Object.keys(object).find(key => object[key] === value);
   }
+  getNewsGraph()
+  {
+    this.service1.getNewsGraph(this.StockId).subscribe(res=>{
 
+      this.graphUrl1=res;
+      console.log("hel");
+    },
+    err=>{
+      console.log(err);
+      this.graphUrl1=err["error"]["text"];
+    });
+  }
+getNewsLink()
+{
+  this.service1.getStockNews(this.StockId).subscribe(res=>{
+    this.stocknews=res;
+    console.log(res);
+
+  },
+  err=>{
+    this.stocknews=JSON.parse(err["error"]["text"]) as any ;
+  console.log(this.stocknews);
+console.log(typeof(this.stocknews));
+}) 
+}
   
  
   

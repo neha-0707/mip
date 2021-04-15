@@ -43,4 +43,10 @@ readonly moversURL="http://127.0.0.1:8000/api/";
   getPieGraph():Observable<any[]>{
     return this.http.get<any[]>(this.moversURL+'portfolio-graph');
   }
+  getNewsGraph(stockid):Observable<any[]>{
+    return this.http.get<any[]>(this.moversURL+'news-graph/'+stockid);
+  }
+  getStockNews(stockid):Observable<any[]>{
+    return this.http.get<any[]>(this.moversURL+'news-links/'+stockid);
+  }
 }

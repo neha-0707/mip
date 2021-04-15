@@ -22,5 +22,11 @@
   </div>
 </div>
 
+<div style="max-width: 100%; height: auto;">
+  <img  [src]="graphUrl1" alt="blue dot" />
+</div>
+<div *ngFor="let stock of stocknews">
+  <a [href]="stock['link']" target="_blank">{{stock["title"]}}</a>
+</div>
 </div>
 
