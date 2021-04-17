@@ -11,7 +11,7 @@
       <tr *ngFor="let x of topGainer;let i=index">
         <th scope="row">{{i+1}}</th>
         <td (click)="onClick(x.company_name)">{{x.company_name}}</td>
-        <td (click)="onClick(topLoser[i].company_name)">{{topLoser[i].company_name}}</td>
+        <td style="cursor: pointer;" (click)="onClick(topLoser[i].company_name)">{{topLoser[i].company_name}}</td>
     
       </tr>
 

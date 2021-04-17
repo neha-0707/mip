@@ -43,9 +43,10 @@ stocknews:any;
      
     this.StockUrl='https://api.stockdio.com/visualization/financial/charts/v1/PricesChange?app-key=72C087E0262F442292E631693DFB565E&symbol='+this.StockId+'&palette=Financial-Light';
     this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.StockUrl);
-    this.getNewsGraph();
-    this.getNewsLink();
     this.getStockDetails();
+    this.getNewsGraph();
+  
+ 
     
   }
   getStockDetails(){

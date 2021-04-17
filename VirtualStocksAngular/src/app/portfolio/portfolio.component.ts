@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { SharedService } from '../shared.service';
-import { MatTableDataSource } from '@angular/material/table';
+
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-portfolio',
@@ -34,7 +35,9 @@ export class PortfolioComponent implements OnInit {
   columnsToDisplay = ['symbol', 'change', 'number'];
   expandedElement: PeriodicElement | null;
   
-  constructor(private service: SharedService) { }
+  constructor(private service: SharedService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getPortfolio();
@@ -50,6 +53,12 @@ export class PortfolioComponent implements OnInit {
       err => {
         console.log(err);
       })
+  }
+  onClick(s:string)
+  {
+    const stockname = s ? s : null;
+   // Pass along the hero id if available
+   this.router.navigate(['/stockdetail', { name: stockname }]);
   }
   splitData() {
     ELEMENT_DATA=[];

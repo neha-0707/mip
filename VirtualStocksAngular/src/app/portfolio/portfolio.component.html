@@ -16,7 +16,7 @@
         <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
           <div>
 
-            <div class="example-element-symbol"> {{element.company_name}} </div>
+            <div class="example-element-symbol" style="cursor: pointer;" (click)="onClick(element.company_name)"> {{element.company_name}} </div>
             <div class="example-element-name">AveragePrice: {{element.averagePrice}} </div>
             <div class="example-element-name">High: {{element.high}} </div>
             <div class="example-element-name">Low: {{element.low}} </div>
