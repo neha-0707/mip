@@ -27,7 +27,7 @@ this.getPieGraph();
     err=>{
       this.errmsg=err;
       this.urlgraph=err["error"]["text"];
-      console.log(err["error"]["text"]);}) 
+      }) 
   }
   getPieGraph()
   {
@@ -37,17 +37,17 @@ this.getPieGraph();
     err=>{
       this.errmsg=err;
       this.urlgraph1=err["error"]["text"];
-      console.log(err["error"]["text"]);}) 
+      }) 
   }
   getUserDetails()
   {
    
     this.service.getUserDetails().subscribe(res=>{
       this.userDeets=res;
-      console.log(this.userDeets);
+      
   
     },
-    err=>{console.log(err);}) 
+    err=>{}) 
   }
   
 
